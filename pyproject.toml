@@ -1,0 +1,41 @@
+[project]
+name = "warehouse"
+version = "0.1.0"
+description = "Single- and multi-agent RL warehouse robot environment (Gymnasium / PettingZoo) with PPO/SAC training, evaluation and visualisation."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "gymnasium>=1.0",
+    "numpy>=2.0",
+    "stable-baselines3>=2.3",
+    "torch>=2.2",
+    "pettingzoo>=1.24",
+    "supersuit>=3.9",
+    "pygame>=2.5",
+    "pillow>=10.0",
+    "imageio>=2.34",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+report = [
+    "jupyter>=1.0",
+    "matplotlib>=3.8",
+    "tensorboard>=2.16",
+    "pandas>=2.2",
+    "tqdm>=4.66",
+]
+dev = [
+    "ruff>=0.6",
+    "pytest>=8.0",
+]
+
+[project.scripts]
+warehouse = "warehouse.cli:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/warehouse"]

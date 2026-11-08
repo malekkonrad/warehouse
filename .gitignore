@@ -216,3 +216,23 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ─── Project training artifacts ──────────────────────────────────────────
+# Raw training outputs are regenerable and large — keep them out of git.
+# A small curated demo set lives under examples/ (tracked) so `warehouse play`
+# and the README work straight after a clone.
+/models/
+/logs/
+/runs/
+
+# Notebook-generated report artifacts (heavy); the rendered HTML is kept.
+/notebooks/gifs/
+/notebooks/eval/
+*.pdf
+
+# But always keep the curated demo assets.
+!/examples/
+!/examples/**
+
+# Course assignment brief (kept local, not published)
+INSTRUKCJA_projekt5.md
